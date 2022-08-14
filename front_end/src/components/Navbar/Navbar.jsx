@@ -4,7 +4,11 @@ import "./Navbar.scss"
 
 function Navbar() {
   return (
-    <div>Navbar</div>
+    <nav>
+        <div>
+            <img/>
+        </div>
+    </nav>
   )
 }
 
