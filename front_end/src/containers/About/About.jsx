@@ -23,7 +23,7 @@ const abouts = [
 ];
 function About() {
   return (
-    <>
+    <div id="about">
       <h2 className="head-text">
         I Know That <span>Good Design </span>
         <br />
@@ -49,7 +49,7 @@ function About() {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
