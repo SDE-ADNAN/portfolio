@@ -4,9 +4,20 @@ import { motion } from "framer-motion";
 import "./Header.scss";
 import { images } from "../../constants";
 
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};
+
 function Header() {
   return (
-    <div className="app__header app__flex">
+    <div id="home" className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 1 }}
@@ -42,10 +53,16 @@ function Header() {
         />
       </motion.div>
       <motion.div
-        whileInView={{ opacity: [0, 1] }}
-        transition={{ duration: 1, delayChildren: 1 }}
-        className="app__header-info"
-      ></motion.div>
+        variant={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className="app__header-circles"
+      >
+        {[images.flutter, images.redux, images.sass].map((circle, index) => (
+          <div className="circle-cmp app_flex" key={`circle-${index}`}>
+            <img src={circle} alt="circle"></img>
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 }
