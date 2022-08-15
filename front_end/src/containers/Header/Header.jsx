@@ -20,9 +20,32 @@ function Header() {
               <h1 className="head-text">Adnan</h1>
             </div>
           </div>
-          <div className="tag-cmp app__flex"></div>
+          <div className="tag-cmp app__flex">
+            <p className="p-text">Web Developer</p>
+            {/* <p className="p-text">Frontend</p> */}
+          </div>
         </div>
       </motion.div>
+
+      <motion.div
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 1 }}
+        className="app__header-img"
+      >
+        <img src={images.profile} alt="profile_bg" />
+        <motion.img
+          whileInView={{ scale: [0, 1] }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          src={images.circle}
+          alt="profile_circle"
+          className="overlay_circle"
+        />
+      </motion.div>
+      <motion.div
+        whileInView={{ opacity: [0, 1] }}
+        transition={{ duration: 1, delayChildren: 1 }}
+        className="app__header-info"
+      ></motion.div>
     </div>
   );
 }
