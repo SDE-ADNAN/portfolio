@@ -125,8 +125,4 @@ function Work() {
 
 // wrapping the About  component with Appwrap which is an HOC i.e a higher order function
 // and passing about as an component and "about" as its id
-export default AppWrap(
-  MotionWrap(Work, "app__work"),
-  "works",
-  "app__primarybg"
-);
+export default AppWrap(MotionWrap(Work, "app__work"), "work", "app__primarybg");
