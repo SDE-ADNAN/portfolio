@@ -67,5 +67,6 @@ function Header() {
     </div>
   );
 }
-
+// wrapping the About  component with Appwrap which is an HOC i.e a higher order function
+// and passing about as an component and "about" as its id
 export default AppWrap(Header, "home");
