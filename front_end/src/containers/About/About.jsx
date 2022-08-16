@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "./About.scss";
 import { images } from "../../constants";
 import { client, urlFor } from "../../client";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 
 function About() {
   const [abouts, setAbouts] = useState([]);
@@ -48,4 +48,8 @@ function About() {
 
 // wrapping the About  component with Appwrap which is an HOC i.e a higher order function
 // and passing about as an component and "about" as its id
-export default AppWrap(About, "about");
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "about",
+  "app__whitebg"
+);
