@@ -21,9 +21,28 @@ function Work() {
     });
   }, []);
 
-  const handleWorkFilter = (item) => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    // for the shuffle effect
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      // for resetting the card after the shuffle effect
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === "All") {
+        setFilterWork(works);
+      } else {
+        setFilterWork(
+          works.filter((work) => {
+            work.tags.includes(item);
+          })
+        );
+      }
+    }, 500);
+  };
   return (
-    <div>
+    <div className="app__work">
       <h2 className="head-text">
         Some Of My <span>Work</span>
       </h2>
@@ -56,8 +75,7 @@ function Work() {
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
-                  duration: 1,
-                  delayChildren: 1,
+                  duration: 0.25,
                   ease: "easeInOut",
                   staggerChildren: 0.5,
                 }}
