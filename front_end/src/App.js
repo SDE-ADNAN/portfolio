@@ -1,6 +1,6 @@
 import "./App.scss";
 
-import { About, Footer, Header, Skills, Testimonial, Work } from "./containers";
+import { About, Footer, Header, Skills, Work } from "./containers";
 import { Navbar } from "./components";
 
 function App() {
