@@ -62,7 +62,7 @@ export default {
   about04,
   profile,
   circle,
-  logo,
+  // logo,
   adidas,
   amazon,
   asus,
